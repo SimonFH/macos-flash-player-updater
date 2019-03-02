@@ -8,10 +8,5 @@ or
 `./updtflsh.sh install ppapi`
 respectively.
 
-Run
-`./updtflsh.sh dialog`
-to get a popup dialog if a new update is available. Useful when run as a cronjob.
-
 Run `./updtflsh.sh dialog`, for example as cronjob, for a popup dialog to install new updates.
-
 (You need some form of external interaction when run as a cronjob, since cron has no tty)
