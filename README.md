@@ -3,11 +3,15 @@ Script for handling flash player NPAPI &amp; PPAPI install and updates in the sh
 
 Running the script without arguments checks for updates to installed plugins.
 To install NPAPI or PPAPI using the script, run
-`./update_flash.sh install npapi`
+`./updtflsh.sh install npapi`
 or
-`./update_flash.sh install ppapi`
+`./updtflsh.sh install ppapi`
 respectively.
 
 Run
-`./update_flash.sh cronjob`
+`./updtflsh.sh dialog`
 to get a popup dialog if a new update is available. Useful when run as a cronjob.
+
+Run `./updtflsh.sh dialog`, for example as cronjob, for a popup dialog to install new updates.
+
+(You need some form of external interaction when run as a cronjob, since cron has no tty)
