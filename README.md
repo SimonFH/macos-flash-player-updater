@@ -9,4 +9,3 @@ or
 respectively.
 
 Run `./updtflsh.sh dialog`, for example as cronjob, for a popup dialog to install new updates.
-(You need some form of external interaction when run as a cronjob, since cron has no tty)
