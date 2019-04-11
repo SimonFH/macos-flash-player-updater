@@ -37,11 +37,13 @@ fi
 
 message="A new version of flash is available. Would you like to update now?"
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+bname=`basename "$0"`
 # make sure the worker script is postfixed "_worker.sh"
-update_flash=${0%.*}_worker.sh
+update_flash=$DIR/${bname%.*}_worker.sh
 
 # if logfile doesnt exist, create it
-logfile=${0%.*}.log
+logfile=$DIR/${bname%.*}.log
 if [ ! -e $logfile ]; then
   touch $logfile 
 fi
