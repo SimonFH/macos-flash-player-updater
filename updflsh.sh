@@ -7,7 +7,28 @@
 
 doInstall() {
   # export vars
-  set >~/.env.tmp
+
+  # (the 'set' method exports a lot of useless stuff that breaks execution when imported, so for the time we do it manually instead)
+  #set >~/.env.tmp
+
+  echo 'export update_flash="'"$update_flash"'"
+export dialog="'"$dialog"'"
+export message="'"$message"'"
+export DIR="'"$DIR"'"
+export bname="'"$bname"'"
+export update_flash="'"$update_flash"'"
+export logfile="'"$logfile"'"
+export current_npapi="'"$current_npapi"'"
+export current_ppapi="'"$current_ppapi"'"
+export latest_ppapi="'"$latest_ppapi"'"
+export latest_npapi="'"$latest_npapi"'"
+export url_ppapi="'"$url_ppapi"'"
+export url_npapi="'"$url_npapi"'"
+export install_ppapi="'"$install_ppapi"'"
+export install_npapi="'"$install_npapi"'"
+export new_npapi="'"$new_npapi"'"
+export new_ppapi="'"$new_ppapi"'"'>~/.env.tmp
+
 
   if [ ! -z "$dialog" ]; then
     osascript -e '

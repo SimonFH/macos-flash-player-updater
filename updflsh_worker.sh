@@ -1,11 +1,9 @@
 #!/bin/sh 
 # Don't run this directly
 
-
 # import vars
 . ~/.env.tmp
 rm ~/.env.tmp
-
 
 installNPAPI() {
   # mount dmg file
@@ -56,7 +54,7 @@ installPPAPI(){
 startInstall(){
   # make sure to be root to install
   if [[ "$(sudo whoami)" != "root" ]]; then
-    exit
+    doExit
   fi
   # if new npapi available, download and install
   if [ ! -z "$new_npapi" -o ! -z "$install_npapi" ]; then
@@ -87,6 +85,27 @@ elif [ ! -z "$new_npapi" -o ! -z "$new_ppapi" ]; then
   if [ "$foo" = "y" -o "$foo" = "yes" ];then
     startInstall
   else
-    exit
+    doExit
   fi
 fi
+
+doExit(){
+  unset update_flash
+  unset dialog
+  unset message
+  unset DIR
+  unset bname
+  unset update_flash
+  unset logfile
+  unset current_npapi
+  unset current_ppapi
+  unset latest_ppapi
+  unset latest_npapi
+  unset url_ppapi
+  unset url_npapi
+  unset install_ppapi
+  unset install_npapi
+  unset new_npapi
+  unset new_ppapi
+  exit
+}
