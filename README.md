@@ -9,4 +9,4 @@ or
 `./updflsh.sh install ppapi`
 respectively.
 
-Run `./updflsh.sh dialog`, for example as cronjob, for a popup dialog to install new updates.
+Run `./install.sh` to install a daemon that checks for updates and gives you a popup dialog to install new updates when available.
